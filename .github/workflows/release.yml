@@ -5,12 +5,16 @@ on:
     branches:
       - master
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: GoogleCloudPlatform/release-please-action@v2
+      - uses: GoogleCloudPlatform/release-please-action@v4
         name: create release
         with:
-          release-type: simple
-          bump-minor-pre-major: true # remove this to enable breaking changes causing 1.0.0 tag
+          token: ${{ secrets.ASDF_WORKFLOW_TOKEN }}
+          release-type: go
