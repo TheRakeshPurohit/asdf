@@ -12,14 +12,14 @@
 
 一个 `.tool-versions` 文件示例如下所示：
 
-```:no-line-numbers
+```
 ruby 2.5.3
 nodejs 10.15.0
 ```
 
 你也可以包含注释在里面：
 
-```:no-line-numbers
+```
 ruby 2.5.3 # 这是一个注释
 # 这是另一个注释
 nodejs 10.15.0
@@ -29,14 +29,14 @@ nodejs 10.15.0
 
 - `10.15.0` - 实际的版本号。支持下载二进制文件的插件将会下载二进制文件。
 - `ref:v1.0.2-a` 或者 `ref:39cb398vb39` - 指定标签/提交/分支从 github 下载并编译。
-- `path:/src/elixir` - 要使用的工具的自定义编译版本的路径。这种方式供语言开发者等使用。
+- `path:~/src/elixir` - 要使用的工具的自定义编译版本的路径。这种方式供语言开发者等使用。
 - `system` - 此关键字会导致 asdf 传递系统上未由 asdf 管理的工具版本。
 
 ::: tip 提示
 
 多版本可以通过空格将它们分隔开来。比如，使用 Python `3.7.2` 回退到 Python `2.7.15` 最后回退到 `system` Python，可以将以下行的内容添加到 `.tool-versions` 文件中。
 
-```:no-line-numbers
+```
 python 3.7.2 2.7.15 system
 ```
 
@@ -52,11 +52,13 @@ python 3.7.2 2.7.15 system
 
 给你的家目录添加一个 `.asdfrc` 文件然后 asdf 将会使用这个文件所指定的配置。下面的文件展示了所需的格式，其中包含用于演示的默认值：
 
-```:no-line-numbers
+```txt
 legacy_version_file = no
 use_release_candidates = no
 always_keep_download = no
 plugin_repository_last_check_duration = 60
+disable_plugin_short_name_repository = no
+concurrency = auto
 ```
 
 ### `legacy_version_file`
@@ -67,15 +69,6 @@ plugin_repository_last_check_duration = 60
 | :------------------------------------------------------ | :------------------------------------------------------- |
 | `no` <Badge type="tip" text="默认" vertical="middle" /> | 从 `.tool-versions` 文件读取版本                         |
 | `yes`                                                   | 如果可行的话，从传统版本文件读取版本（`.ruby-versions`） |
-
-### `use_release_candidates`
-
-配置 `asdf update` 命令以升级到最新的候选版本，而不是最新的语义版本。
-
-| 选项                                                    | 描述           |
-| :------------------------------------------------------ | :------------- |
-| `no` <Badge type="tip" text="默认" vertical="middle" /> | 语义版本被使用 |
-| `yes`                                                   | 候选版本被使用 |
 
 ### `always_keep_download`
 
@@ -102,9 +95,3 @@ plugin_repository_last_check_duration = 60
 - `ASDF_DEFAULT_TOOL_VERSIONS_FILENAME` - 存储工具名称和版本的文件名。默认为 `.tool-versions`。可以是任何有效的文件名。通常，除非你知道你希望 asdf 忽略 `.tool-versions` 文件，否则不应该覆盖默认值。
 - `ASDF_DIR` - 默认为 `~/.asdf` - `asdf` 脚本的位置。如果你把 `asdf` 安装到了其他目录，请设置该变量到那个目录。比如，如果通过 AUR 进行安装，则应设置该变量为 `/opt/asdf-vm`。
 - `ASDF_DATA_DIR` - 默认为 `~/.asdf` - `asdf` 安装插件、垫片和安装器的位置。可以被设置在上一节提到的生效 `asdf.sh` 或者 `asdf.fish` 之间的任何位置。对于 Elvish，这可以设置在 `use asdf` 上面。
-
-## 内部配置
-
-用户不必担心本节，因为它描述了对包管理器和集成者有用的 `asdf` 的内部配置。
-
-- `$ASDF_DIR/asdf_updates_disabled`：当此文件存在时（内容无关），通过 `asdf update` 命令进行的更新 将会被禁用。像 Pacman 或者 Homebrew 等包管理器使用它来确保个性化安装的正确的更新方法。
