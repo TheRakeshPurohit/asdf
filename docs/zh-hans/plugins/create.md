@@ -57,7 +57,7 @@
 
 如果可能，脚本应仅在安装脚本认为工具的生成和安装成功后，才将文件放在 `ASDF_INSTALL_PATH` 目录中。asdf 检查 `ASDF_INSTALL_PATH` 目录的 [扩展](https://github.com/asdf-vm/asdf/blob/242d132afbf710fe3c7ec23c68cec7bdd2c78ab5/lib/utils.sh#L44) 以确认是否安装了该工具版本。如果在安装过程开始时填充了 `ASDF_INSTALL_PATH` 目录，则在安装过程中在其他终端中运行的其他 asdf 命令可能会认为该工具版本已经安装，即使它还未完全安装。
 
-如果你希望你的插件使用 asdf 0.7._ 及更早版本和 0.8._ 及更高版本，请检查是否存在 `ASDF_DOWNLOAD_PATH` 环境变量。如果未设置，请在 `bin/install` 脚本回调时下载源代码。如果设置，则假设 `bin/downlaod` 脚本已经下载源代码。
+如果你希望你的插件使用 asdf 0.7._ 及更早版本和 0.8._ 及更高版本，请检查是否存在 `ASDF_DOWNLOAD_PATH` 环境变量。如果未设置，请在 `bin/install` 脚本回调时下载源代码。如果设置，则假设 `bin/download` 脚本已经下载源代码。
 
 ## 可选脚本
 
@@ -150,10 +150,10 @@ bin tools veggies
 
 其他请参考相关钩子：
 
-- `pre_asdf_plugin_updated`
-- `pre_asdf_plugin_updated_${plugin_name}`
-- `post_asdf_plugin_updated`
-- `post_asdf_plugin_updated_${plugin_name}`
+- `pre_asdf_plugin_update`
+- `pre_asdf_plugin_update_${plugin_name}`
+- `post_asdf_plugin_update`
+- `post_asdf_plugin_update_${plugin_name}`
 
 #### bin/pre-plugin-remove
 
@@ -222,7 +222,7 @@ asdf plugin test <plugin-name> <plugin-url> [--asdf-tool-version <version>] [--a
 
 只有前两个参数是必须的。
 如果指定了 \__version_，则该工具将随指定版本一起安装。默认返回为 `asdf latest <plugin-name>`。
-如果指定了 _git-ref_，则插件将检查提交/分支/标签。这对于在该插件的 CI 上测试拉取请求非常有用。
+如果指定了 _git-ref_，则插件将检查提交/分支/标签。这对于在该插件的 CI 上测试拉取请求非常有用。默认值是插件仓库的默认分支。
 
 剩下的参数被视为要执行的命令，以确保安装的工具正常工作。通常情况下，它需要带 `--version` 或者 `--help`。例如，要测试 NodeJS 插件，我们可以运行：
 

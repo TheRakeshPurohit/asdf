@@ -12,7 +12,7 @@ Configurações globais podem ser modificadas no arquivo `$HOME/.tool-versions`
 
 O arquivo `.tool-versions` se parece assim:
 
-```:no-line-numbers
+```
 ruby 2.5.3
 nodejs 10.15.0
 ```
@@ -22,12 +22,12 @@ As versões podem estar no seguinte formato:
 - `10.15.0` - uma versão real. Os plugins que suportam o download de binários farão o download de binários.
 - `ref:v1.0.2-a` ou `ref:39cb398vb39` - _tag/commit/branch_ para download pelo github e compilação
   um path costumizado e compi
-- `path:/src/elixir` - um path para uma versão compilada e personalizada de uma ferramenta pronta para usar. Para uso por linguagens de desenvolvimento e outros.
+- `path:~/src/elixir` - um path para uma versão compilada e personalizada de uma ferramenta pronta para usar. Para uso por linguagens de desenvolvimento e outros.
 - `system` - faz com que asdf passe para a versão da ferramenta no sistema que não é gerenciada por asdf .
 
 Várias versões podem ser definidas, separando-as com um espaço. Por exemplo, para usar Python 3.7.2, e também Python 2.7.15, use a linha abaixo em seu arquivo `.tool-versions`.
 
-```:no-line-numbers
+```
 python 3.7.2 2.7.15 system
 ```
 
@@ -37,18 +37,17 @@ Para isntalar somente uma ferramenta definida em `.tool-versions`, execute o cam
 
 Edite o arquivo diretamente no diretório ou use `asdf local` (ou `asdf global`) para atualiza-lo.
 
-## \$HOME/.asdfrc
+## `$HOME/.asdfrc`
 
 Adicione um arquivo `.asdfrc` ao seu diretório home e asdf usará as configurações especificadas no arquivo. O arquivo deve ser formatado assim:
 
-```:no-line-numbers
+```
 legacy_version_file = yes
 ```
 
 **Configurações**
 
 - `legacy_version_file` - por padrão é `no`. Se definido como `yes`, fará com que os plug-ins que suportam esse recurso leiam os arquivos de versão usados por outros gerenciadores de versão (por exemplo, `.ruby-version` no caso do `rbenv` do Ruby).
-- `use_release_candidates` - por padrão é `no`. Se definido como `yes`, fará com que o comando `asdf update` atualize para o mais recente em vez da versão semântica mais recente.
 
 - `always_keep_download` - por padrão é `no`. Se definido como `yes`, fará com que o `asdf install` sempre mantenha o código-fonte ou binário baixado. Se definido como `no`, o código fonte ou binário baixado por `asdf install` será excluído após a instalação bem sucedida.
 

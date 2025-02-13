@@ -1,5 +1,251 @@
 # Changelog
 
+## [0.16.2](https://github.com/asdf-vm/asdf/compare/v0.16.1...v0.16.2) (2025-02-08)
+
+
+### Bug Fixes
+
+* correct Bash completion ([#1886](https://github.com/asdf-vm/asdf/issues/1886)) ([fdb1bc7](https://github.com/asdf-vm/asdf/commit/fdb1bc793a06263a0eac8818c14498e23906108a))
+* improve completions for Zsh and Fish ([#1912](https://github.com/asdf-vm/asdf/issues/1912)) ([2f806de](https://github.com/asdf-vm/asdf/commit/2f806de830655d9146d25663d74e3fceedcc300f))
+* correct help for asdf set command ([#1920](https://github.com/asdf-vm/asdf/issues/1920)) ([554b4ea](https://github.com/asdf-vm/asdf/commit/554b4eaf351c08fed2261715308320838f0c5afb))
+* correct help for asdf set command in Bash completion ([#1921](https://github.com/asdf-vm/asdf/issues/1921)) ([63e7dca](https://github.com/asdf-vm/asdf/commit/63e7dcaeae46d6d43ae63db9bf635e227a6ba944))
+* improve Zsh completion suggestions ([#1925](https://github.com/asdf-vm/asdf/issues/1925)) ([e190624](https://github.com/asdf-vm/asdf/commit/e190624fa82fb2caf4d56521232de4e873b63118))
+* run go tests when go.mod or go.sum change ([#1917](https://github.com/asdf-vm/asdf/issues/1917)) ([6e4a7b5](https://github.com/asdf-vm/asdf/commit/6e4a7b5ad3d6abdbb98faa383bc41643b35ef6bf))
+* fix typo ([#1897](https://github.com/asdf-vm/asdf/issues/1897)) ([98ffa86](https://github.com/asdf-vm/asdf/commit/98ffa861e9b64a2e029a0ed26205bfcc81838180))
+* update make utils script to set correct version ([892736b](https://github.com/asdf-vm/asdf/commit/892736bf76ac37487cfca75d2cfcc57d5cdec913))
+* update urfave/cli to fix cmd output ([#1914](https://github.com/asdf-vm/asdf/issues/1914)) ([3525e9e](https://github.com/asdf-vm/asdf/commit/3525e9ed4edb05f15a15f00378f5336ef29aa2f4))
+
+## [0.16.1](https://github.com/asdf-vm/asdf/compare/v0.16.0...v0.16.1) (2025-02-05)
+
+
+### Bug Fixes
+
+* correct SliceToMap environment variable parsing function ([#1879](https://github.com/asdf-vm/asdf/issues/1879)) ([e63aec6](https://github.com/asdf-vm/asdf/commit/e63aec61020a907fe5960d74b6d3dbf229214ae0))
+* remove old hyphenated command from help ([1f0296a](https://github.com/asdf-vm/asdf/commit/1f0296a3d11a9df0d300ca61f59d097750ab6f1c))
+* replace reference to removed subcommands ([#1868](https://github.com/asdf-vm/asdf/issues/1868)) ([0785d35](https://github.com/asdf-vm/asdf/commit/0785d35263b2bd5ad570ee6706e1b38d8dd05422))
+* revert change to old Bash help text ([de019fd](https://github.com/asdf-vm/asdf/commit/de019fde849d2f3a258b3f40e5b2004d1973c804))
+* use version in home dir when no version found in root dir ([#1883](https://github.com/asdf-vm/asdf/issues/1883)) ([5ae5f76](https://github.com/asdf-vm/asdf/commit/5ae5f769f1042add6219e98633063e76a03e12b9))
+
+## [0.16.0](https://github.com/asdf-vm/asdf/compare/v0.15.0...v0.16.0) (2025-01-30)
+
+
+### Features
+
+* **Rewrite asdf in Golang** The rewrite in Go was spread across 88 pull requests that are all included in this release. The primary goal of the rewrite was to create a codebase that was faster, simpler and easier to maintain. The rewrite tries to maintain feature parity with the previous version. However, a number of breaking changes were introduced. Some of these were due to the change of language, a few out of a desire to simplify the code, and some to improve the user experience. For the full list of breaking changes and the upgrade guide visit the [Upgrading to 0.16.0 page](https://asdf-vm.com/guide/upgrading-to-v0-16.html#breaking-changes) on the asdf website. **It is highly recommended that you read this guide before upgrading**.
+
+A warning has also been added to the Bash code for asdf in 0.16.0. anyone trying to use asdf as they did in version 0.15.0 and earlier will get a warning message instructing them to follow the upgrade guide.
+
+The full list of pull requests and merge commits for this rewrite are listed below.
+
+   ([3a9f539](https://github.com/asdf-vm/asdf/commit/3a9f539aa092fa7c043661232f8caa154e861c6f)) ([f41ce90](https://github.com/asdf-vm/asdf/commit/f41ce90dc4410da7bb76c5ccf73147759716be07)) ([#1833](https://github.com/asdf-vm/asdf/issues/1833)) ([4f9a5d3](https://github.com/asdf-vm/asdf/commit/4f9a5d3d314bc6a8abd5e14d9c38472055033fa7)) ([d06d71f](https://github.com/asdf-vm/asdf/commit/d06d71f9f6b2fd6069c6fbf27bc7b13b8b0ec5c2)) ([7d5281a](https://github.com/asdf-vm/asdf/commit/7d5281a8a9151d57113ea0dd5d2fea2b07f55228)) ([8ad3472](https://github.com/asdf-vm/asdf/commit/8ad3472abc64d8a07589a16096142b52aeae18af)) ([b40beb6](https://github.com/asdf-vm/asdf/commit/b40beb6039b031d350bd1c621f34d90f23f72765)) ([b23e5a3](https://github.com/asdf-vm/asdf/commit/b23e5a320fd231c4fa55baa3b32d90b55a6ff4f1)) ([bc05110](https://github.com/asdf-vm/asdf/commit/bc0511015920acd8421bbccaead86e2badf0c2ae)) ([477e9d5](https://github.com/asdf-vm/asdf/commit/477e9d57293b8c99bcb184cfc72e064f4b68eda0)) ([6d708b2](https://github.com/asdf-vm/asdf/commit/6d708b280720d2144ae7976229fd5630eeb31eaf)) ([572ed07](https://github.com/asdf-vm/asdf/commit/572ed07f2bdb31f04a7244d1d127594ef9922db0)) ([19a0597](https://github.com/asdf-vm/asdf/commit/19a0597502ebecb0dfe2946fe19d9f9da3d57a18)) ([b33ab64](https://github.com/asdf-vm/asdf/commit/b33ab6463c7825a0d03f82f430cfad18a1e941c8)) ([b966ca6](https://github.com/asdf-vm/asdf/commit/b966ca66271f1be81abee751dec929f97cadfab4)) ([8db188a](https://github.com/asdf-vm/asdf/commit/8db188a702b1a64812fbb6e5832ec74ed47dfb34)) ([3fd4a83](https://github.com/asdf-vm/asdf/commit/3fd4a839757a2646054f2d86f487731e0715eeaa)) ([09d06ff](https://github.com/asdf-vm/asdf/commit/09d06ff125107c19a24043e52cf60b378b8b4c3b)) ([d2afb85](https://github.com/asdf-vm/asdf/commit/d2afb85eb80bce85e79c9c0d91ad3103a7f985f0)) ([778ab34](https://github.com/asdf-vm/asdf/commit/778ab34a6f47ac913a0ebc5035d74bfbb3744ebe)) ([9f09f78](https://github.com/asdf-vm/asdf/commit/9f09f78ec06b28bd90d7cdd42762acc1e18011c7)) ([6568891](https://github.com/asdf-vm/asdf/commit/65688915a5d6816b15acf7332d22920d10e8d99a)) ([771f184](https://github.com/asdf-vm/asdf/commit/771f18493fcc8684f02373b2f03750937016f51a)) ([8313ebc](https://github.com/asdf-vm/asdf/commit/8313ebca2d2305b8e176286ae0a43b0359d78059)) ([be52d8f](https://github.com/asdf-vm/asdf/commit/be52d8f39c3aa253496c5469963cd0ecc995d19c)) ([c2e5ee6](https://github.com/asdf-vm/asdf/commit/c2e5ee652532f54aaed7e93796f7239a2a333446)) ([9097696](https://github.com/asdf-vm/asdf/commit/9097696a4fa5ad7efeb383509ecce16125df3cbf)) ([ad0907a](https://github.com/asdf-vm/asdf/commit/ad0907a74df1edf42e7c72ecba96ea52e3de2bcf)) ([2b02f51](https://github.com/asdf-vm/asdf/commit/2b02f51fa1acb2090713f6dfa70903281d28735a)) ([c480044](https://github.com/asdf-vm/asdf/commit/c4800443bd805afd1878891c56108366f3faba0c)) ([26b91aa](https://github.com/asdf-vm/asdf/commit/26b91aa8288787e552dbc50a1c2234ad2264205c)) ([202cdae](https://github.com/asdf-vm/asdf/commit/202cdae831b4909280e0f19ff77bbe4acaec36b4)) ([325cd33](https://github.com/asdf-vm/asdf/commit/325cd3334b3898cbd084ac3b3686458cc92b613e)) ([07b5813](https://github.com/asdf-vm/asdf/commit/07b5813566431ce9f6245e884fe86dd13ad1c195)) ([822e14c](https://github.com/asdf-vm/asdf/commit/822e14c561ab1df74f091bb46bcb340ae9c2bda6)) ([53cd454](https://github.com/asdf-vm/asdf/commit/53cd4544741cab2e58ca7ea8aa36c9c28890b0a1)) ([9f6a65f](https://github.com/asdf-vm/asdf/commit/9f6a65f5dda41d25a9e894ff6a8482810fd6dec8)) ([bd7ab9a](https://github.com/asdf-vm/asdf/commit/bd7ab9ae0844c4c9e41760661a555bab13509752)) ([b6ec89f](https://github.com/asdf-vm/asdf/commit/b6ec89f95f6afedbbdb2daaf4c3d2f67f50f0cf1)) ([162cb8e](https://github.com/asdf-vm/asdf/commit/162cb8eceed53f58c20c547d29ca8068e411ce64)) ([d94bace](https://github.com/asdf-vm/asdf/commit/d94baceb184b8a501a8eb1fd2cd33ca75bf962d9)) ([e7df5ff](https://github.com/asdf-vm/asdf/commit/e7df5ff3253b6caba8ceef6b0754d17fcb765a9b)) ([369beeb](https://github.com/asdf-vm/asdf/commit/369beebab9c80197eb877660add870c0a6be5bda)) ([#1829](https://github.com/asdf-vm/asdf/issues/1829)) ([f68b29b](https://github.com/asdf-vm/asdf/commit/f68b29bd508cfe993d4926377891d0a3e902f2ef)) ([26a3815](https://github.com/asdf-vm/asdf/commit/26a38159483588cd0143b58272f42c96e127d265)) ([ccc98ad](https://github.com/asdf-vm/asdf/commit/ccc98ad4e997b73dcc1e9d6839a17a539c5ec649)) ([447acd1](https://github.com/asdf-vm/asdf/commit/447acd13d1225e2e9ef80ae853c5da02fca034c3)) ([72c20b1](https://github.com/asdf-vm/asdf/commit/72c20b1b51d223dd6633f279258cb8bc54eb4661)) ([924eecf](https://github.com/asdf-vm/asdf/commit/924eecfa6af25f59162e3f35b913a1d0247bd34f)) ([f5a5967](https://github.com/asdf-vm/asdf/commit/f5a59677df42f990529bd8a1668fcfea353ea4a0)) ([3af0291](https://github.com/asdf-vm/asdf/commit/3af02913169abf9049933abc4d99406687d743c3)) ([9ed4216](https://github.com/asdf-vm/asdf/commit/9ed4216525a2076b84e9e5fc6d454746a3b4d825)) ([b9e79e6](https://github.com/asdf-vm/asdf/commit/b9e79e64564ad5a94c9d435458e1a57053744b8d)) ([626bde0](https://github.com/asdf-vm/asdf/commit/626bde0a9785e400eaeb2fa72fb11fff6102b458)) ([f639f8a](https://github.com/asdf-vm/asdf/commit/f639f8a4d0a3fcc3cc175def3b3b2d1ebdac1ade)) ([c0963a3](https://github.com/asdf-vm/asdf/commit/c0963a38a62e61586ef0dd34ea568d23345e3739)) ([cb49b64](https://github.com/asdf-vm/asdf/commit/cb49b64a5adb8944acff0c03e617df0a0f39453c)) ([f74efbf](https://github.com/asdf-vm/asdf/commit/f74efbf1bff5d7489f86f2f568eba2667d95645e)) ([15e1f06](https://github.com/asdf-vm/asdf/commit/15e1f06f3751c9b72deea5cbad587140ba03c645)) ([620c0d8](https://github.com/asdf-vm/asdf/commit/620c0d87e8bf1e1c99a5772c9103fa017e75f487)) ([518a0fa](https://github.com/asdf-vm/asdf/commit/518a0fa4422cff1625cb7b676f40c4bc0a42eed9)) ([5d5d04f](https://github.com/asdf-vm/asdf/commit/5d5d04fbb7a41c83ae5031182d7d671fae434cb5)) ([2fc8006](https://github.com/asdf-vm/asdf/commit/2fc80064902a3b467a82466add1db186a99f075a)) ([c859384](https://github.com/asdf-vm/asdf/commit/c8593842eeb2a3eae74af7747afc62fa406a5b54)) ([2951011](https://github.com/asdf-vm/asdf/commit/2951011090a2a8ac3f42d54198a2447213171c38)) ([c5092c6](https://github.com/asdf-vm/asdf/commit/c5092c6dbfce3614f3de2db08afaa6fcb8b7792e)) ([3f9744d](https://github.com/asdf-vm/asdf/commit/3f9744df0fd8b23684ef2c705642232c5d2151af)) ([985c181](https://github.com/asdf-vm/asdf/commit/985c181118b39bb555a2bd2a1cdbf111a25bd512)) ([18e21c9](https://github.com/asdf-vm/asdf/commit/18e21c90284be35fa01e957b49336ffac515e19b)) ([0058988](https://github.com/asdf-vm/asdf/commit/005898800bded840fa7dd9b62a0c60a93c124c8c)) ([#1820](https://github.com/asdf-vm/asdf/issues/1820)) ([c3bd8fe](https://github.com/asdf-vm/asdf/commit/c3bd8feccd2e4589bc905ccf6b1bcd8dc74f4f37)) ([8394e85](https://github.com/asdf-vm/asdf/commit/8394e858fee419ed38833fa953b122fe04754830)) ([5266ba5](https://github.com/asdf-vm/asdf/commit/5266ba581ddf5f96de2d20391e340bb4f7c123c4)) ([3155dc3](https://github.com/asdf-vm/asdf/commit/3155dc374e9cbea6d2d792fef08914124320a292)) ([7dfa8b4](https://github.com/asdf-vm/asdf/commit/7dfa8b40ae5e557b90fb7917bc86a569cf2bd0a6)) ([5a24864](https://github.com/asdf-vm/asdf/commit/5a2486463238e2473aab739520793011267be19f)) ([80ac9bb](https://github.com/asdf-vm/asdf/commit/80ac9bb51c684c04829328c28a06aa1f1f67a8f2)) ([#1849](https://github.com/asdf-vm/asdf/issues/1849)) ([8b1b024](https://github.com/asdf-vm/asdf/commit/8b1b024f51b166bf29481162fa57e5752d0d9300)) ([1b3c426](https://github.com/asdf-vm/asdf/commit/1b3c42699a30b6bcc7295d3f433dad9cd520f130)) ([163d6b4](https://github.com/asdf-vm/asdf/commit/163d6b4b462954a2f52b6a1b9e09faa806292260)) ([87d3c06](https://github.com/asdf-vm/asdf/commit/87d3c06cf5dc859dab4d1af3dec290ed49651b67)) ([3f17a80](https://github.com/asdf-vm/asdf/commit/3f17a80fbe34ee68a3d5580798374caf1a7bc4ae)) ([#1841](https://github.com/asdf-vm/asdf/issues/1841)) ([251812b](https://github.com/asdf-vm/asdf/commit/251812bfd58a768c4a51b82c0f5f88601abfd84c)) ([#1852](https://github.com/asdf-vm/asdf/issues/1852)) ([78a00fc](https://github.com/asdf-vm/asdf/commit/78a00fc90345bd77d83bb9b2b61f85756fceb1a6)) ([6b45a5e](https://github.com/asdf-vm/asdf/commit/6b45a5e5f74f60a22fd20b331163f5e5d6a3881c)) ([2a31caf](https://github.com/asdf-vm/asdf/commit/2a31cafd38128be86696c0a46e0223a95b8129fe)) ([7439ea9](https://github.com/asdf-vm/asdf/commit/7439ea916829f7c3f1f2932fa17b3d2848c2dbe7)) ([88af4ee](https://github.com/asdf-vm/asdf/commit/88af4eea00c395407a4b904e80e307ad864a6535))
+
+### Bug Fixes
+
+* bash command set end of line LF ([#1847](https://github.com/asdf-vm/asdf/issues/1847)) ([8211421](https://github.com/asdf-vm/asdf/commit/8211421f4e0d1f62d2d2b7436f9070040231fcbd))
+
+## [0.15.0](https://github.com/asdf-vm/asdf/compare/v0.14.1...v0.15.0) (2024-12-18)
+
+
+### Features
+
+* golang-rewrite: remove `asdf update` command to prepare for Go version ([#1806](https://github.com/asdf-vm/asdf/issues/1806)) ([15571a2](https://github.com/asdf-vm/asdf/commit/15571a2d28818644673bbaf0fcf7d1d9e342cda4))
+
+
+### Patches
+
+* completions: Address two Bash completion bugs ([#1770](https://github.com/asdf-vm/asdf/issues/1770)) ([ebdb229](https://github.com/asdf-vm/asdf/commit/ebdb229ce68979a18dae5c0922620b860c56b22f))
+* make plugin-test work on alpine linux ([#1778](https://github.com/asdf-vm/asdf/issues/1778)) ([f5a1f3a](https://github.com/asdf-vm/asdf/commit/f5a1f3a0a8bb50796f6ccf618d2bf4cf3bdea097))
+* nushell: nushell spread operator ([#1777](https://github.com/asdf-vm/asdf/issues/1777)) ([a0ce37b](https://github.com/asdf-vm/asdf/commit/a0ce37b89bd5eb4ddaa806f96305ee99a8c5d365))
+* nushell: Use correct env var for shims dir ([#1742](https://github.com/asdf-vm/asdf/issues/1742)) ([2f07629](https://github.com/asdf-vm/asdf/commit/2f0762991c35da933b81ba6ab75457a504deedbb))
+* when download path got removed, it should use -f to force delete the download files ([#1746](https://github.com/asdf-vm/asdf/issues/1746)) ([221507f](https://github.com/asdf-vm/asdf/commit/221507f1c0288f0df13315a7f0f2c0a7bc39e7c2))
+
+
+### Documentation
+
+* add Korean translation ([#1757](https://github.com/asdf-vm/asdf/issues/1757)) ([9e16306](https://github.com/asdf-vm/asdf/commit/9e16306f42b4bbffd62779aaebb9cbbc9ba59007))
+* propose edits for tiny typographical/grammatical errors ([#1747](https://github.com/asdf-vm/asdf/issues/1747)) ([d462b55](https://github.com/asdf-vm/asdf/commit/d462b55ec9868eeaddba4b70850aba908236dd93))
+* split Lint and Test badges for title asdf in `README.MD` ([#1725](https://github.com/asdf-vm/asdf/issues/1725)) ([c778ea1](https://github.com/asdf-vm/asdf/commit/c778ea1deca19d8ccd91253c2f206a6b51a0a9b1))
+* Update Japanese(ja-jp) Translations ([#1715](https://github.com/asdf-vm/asdf/issues/1715)) ([bd19e4c](https://github.com/asdf-vm/asdf/commit/bd19e4cbdc2f0a9380dbdfcec46584d619e8ed56))
+
+## [0.14.1](https://github.com/asdf-vm/asdf/compare/v0.14.0...v0.14.1) (2024-08-15)
+
+
+### Patches
+
+* Only display the "can't keep downloads" warning when asked to keep downloads ([#1756](https://github.com/asdf-vm/asdf/issues/1756)) ([44f3efb](https://github.com/asdf-vm/asdf/commit/44f3efb63b7517520f4610d504d30783a85c9d79))
+
+## [0.14.0](https://github.com/asdf-vm/asdf/compare/v0.13.1...v0.14.0) (2024-01-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* Enable `pipefail` ([#1608](https://github.com/asdf-vm/asdf/issues/1608))
+
+### Patches
+
+* `plugin test` git-ref to use plugin repo default branch ([#1694](https://github.com/asdf-vm/asdf/issues/1694)) ([6d8cf9d](https://github.com/asdf-vm/asdf/commit/6d8cf9d44b3d985ac59f1eac827c5275392f90fd))
+* avoid mention of `ASDF_NU_DIR` ([#1660](https://github.com/asdf-vm/asdf/issues/1660)) ([dfea89c](https://github.com/asdf-vm/asdf/commit/dfea89ccc703f3ef5a87c4b85726456d70167d89))
+* Enable `pipefail` ([#1608](https://github.com/asdf-vm/asdf/issues/1608)) ([4085e55](https://github.com/asdf-vm/asdf/commit/4085e5542bac824ea124610ad247c2f90d1b8d93))
+* **fish:** use PATH instead of fish_user_paths ([#1709](https://github.com/asdf-vm/asdf/issues/1709)) ([5327697](https://github.com/asdf-vm/asdf/commit/53276973f7c99695cd9a28b04c010b006d7f60ca))
+* list `asdf version` command under help.txt UTILS section ([#1673](https://github.com/asdf-vm/asdf/issues/1673)) ([240a5fb](https://github.com/asdf-vm/asdf/commit/240a5fbdea1de055672d02f83db1de990ea2bf83))
+* **nushell:** Use `def --env` instead of `def-env` ([#1681](https://github.com/asdf-vm/asdf/issues/1681)) ([3b8f400](https://github.com/asdf-vm/asdf/commit/3b8f400c3e628851286bfebd8da5bc7ab45cd676))
+* plugin extension commands to not require `bin/` directory ([#1643](https://github.com/asdf-vm/asdf/issues/1643)) ([61420ad](https://github.com/asdf-vm/asdf/commit/61420ad90829b2c9bf1ca16681a2eb652adcc755))
+* use universal scope for fish_user_paths ([#1699](https://github.com/asdf-vm/asdf/issues/1699)) ([0ffee72](https://github.com/asdf-vm/asdf/commit/0ffee7224bc00a917ceaea689c6268fd1f03bd62))
+* warn if plugin does not support keeping downloads if configured ([#1644](https://github.com/asdf-vm/asdf/issues/1644)) ([19515ed](https://github.com/asdf-vm/asdf/commit/19515eda3b91167b0d76c35ffc4402de688007e0))
+
+
+### Documentation
+
+* add Japanese translation ([#1667](https://github.com/asdf-vm/asdf/issues/1667)) ([2b9bec7](https://github.com/asdf-vm/asdf/commit/2b9bec7710cd18e51a01652e1f58cc309baf2fd7))
+* fix some pt-br spelling ([#1640](https://github.com/asdf-vm/asdf/issues/1640)) ([0c7c41a](https://github.com/asdf-vm/asdf/commit/0c7c41ab44d3a42a9e57e3d20a646569c2eacfdc))
+* fix typo "node version" filename ([#1679](https://github.com/asdf-vm/asdf/issues/1679)) ([fad23bc](https://github.com/asdf-vm/asdf/commit/fad23bc9f4d38747f28d6708ab01689749030063))
+* fix typo ([#1670](https://github.com/asdf-vm/asdf/issues/1670)) ([5737fa3](https://github.com/asdf-vm/asdf/commit/5737fa316eab01c4033565eacf678222cd861f8d))
+* Improve `.asdfrc` plugin hook documentation ([#1661](https://github.com/asdf-vm/asdf/issues/1661)) ([8fbf9a3](https://github.com/asdf-vm/asdf/commit/8fbf9a396bd4a5b71ec7cf215d12040fb5365d6a))
+
+## [0.13.1](https://github.com/asdf-vm/asdf/compare/v0.13.0...v0.13.1) (2023-09-12)
+
+
+### Patches
+
+* **fish:** use builtin realpath over system one ([#1637](https://github.com/asdf-vm/asdf/issues/1637)) ([5ac3032](https://github.com/asdf-vm/asdf/commit/5ac30328a7bbd1a8d974bb5fb1f14d8bd2d1e03f))
+
+## [0.13.0](https://github.com/asdf-vm/asdf/compare/v0.12.0...v0.13.0) (2023-09-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* `plugin list` exit code 0 when no plugins are installed ([#1597](https://github.com/asdf-vm/asdf/issues/1597))
+* 0 exit code for success when adding an existing plugin ([#1598](https://github.com/asdf-vm/asdf/issues/1598))
+* **fish:** don't resolve symlinks for ASDF_DIR ([#1583](https://github.com/asdf-vm/asdf/issues/1583))
+
+### Features
+
+* add plugin location when update the plugin ([#1602](https://github.com/asdf-vm/asdf/issues/1602)) ([36c7024](https://github.com/asdf-vm/asdf/commit/36c7024baa4b829b3629b4e0430157266d354158))
+
+
+### Patches
+
+* `plugin list` exit code 0 when no plugins are installed ([#1597](https://github.com/asdf-vm/asdf/issues/1597)) ([a029c00](https://github.com/asdf-vm/asdf/commit/a029c007503f2eec911a0c836e8622bb38c5e065))
+* 0 exit code for success when adding an existing plugin ([#1598](https://github.com/asdf-vm/asdf/issues/1598)) ([4dd1904](https://github.com/asdf-vm/asdf/commit/4dd190466a9855dac300ce691e66a7629ef37b82))
+* **fish:** don't resolve symlinks for ASDF_DIR ([#1583](https://github.com/asdf-vm/asdf/issues/1583)) ([d1a563d](https://github.com/asdf-vm/asdf/commit/d1a563dcc0107d5c631f73b114044898b5cadcf9))
+* improve lint and test scripts ([#1607](https://github.com/asdf-vm/asdf/issues/1607)) ([b320803](https://github.com/asdf-vm/asdf/commit/b3208031204aabad6e85346155baacab16862da8))
+* Make asdf.fish compatible with Fish 3.1.2 ([#1590](https://github.com/asdf-vm/asdf/issues/1590)) ([e83d71e](https://github.com/asdf-vm/asdf/commit/e83d71e43f525453994eb4cfda8ad66f8b914529))
+* no longer write temporary files to home directory ([#1592](https://github.com/asdf-vm/asdf/issues/1592)) ([624604a](https://github.com/asdf-vm/asdf/commit/624604a8626dc6006d78121d4cf0f6c920449c56))
+* nushell language syntax update ([#1624](https://github.com/asdf-vm/asdf/issues/1624)) ([0ddab5d](https://github.com/asdf-vm/asdf/commit/0ddab5dfaf28ad97c84a6aa56b08ccc212e07b4d))
+* set default shell version values on POSIX entrypoint ([#1594](https://github.com/asdf-vm/asdf/issues/1594)) ([4d5f22d](https://github.com/asdf-vm/asdf/commit/4d5f22ddb89ce53e24b1ab1cbefce3be95238a19))
+* warn when any ./lib/commands are marked as executable ([#1593](https://github.com/asdf-vm/asdf/issues/1593)) ([2043a09](https://github.com/asdf-vm/asdf/commit/2043a09574bdfdfcf2daf2fdb3bff2d9d2dad64e))
+
+
+### Documentation
+
+* `bin/latest-stable` empty query is set to default ([#1591](https://github.com/asdf-vm/asdf/issues/1591)) ([299dc97](https://github.com/asdf-vm/asdf/commit/299dc97a5b63d8afe1a0bba03e32dddfb7fb8e51))
+* migrate to VitePress from VuePress ([#1578](https://github.com/asdf-vm/asdf/issues/1578)) ([5133819](https://github.com/asdf-vm/asdf/commit/5133819a77aaa393def347bfecb1c442ece4c7f8))
+* upgrade deps & fix breaking changes ([446f8c5](https://github.com/asdf-vm/asdf/commit/446f8c5f947cc5f30f03403c2cfe4dec71b0a494))
+
+## [0.12.0](https://github.com/asdf-vm/asdf/compare/v0.11.3...v0.12.0) (2023-06-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* Remove files containing only `asdf` wrapper functions ([#1525](https://github.com/asdf-vm/asdf/issues/1525))
+* align Fish entrypoint behaviour with other shells ([#1524](https://github.com/asdf-vm/asdf/issues/1524))
+* do not remove items from PATH in POSIX entrypoint ([#1521](https://github.com/asdf-vm/asdf/issues/1521))
+* rework POSIX entrypoint for greater shell support ([#1480](https://github.com/asdf-vm/asdf/issues/1480))
+
+### Features
+
+* Support configurable `ASDF_CONCURRENCY` ([#1532](https://github.com/asdf-vm/asdf/issues/1532)) ([684f4f0](https://github.com/asdf-vm/asdf/commit/684f4f058f24cc418f77825a59a22bacd16a9bee))
+* Support PowerShell Core ([#1522](https://github.com/asdf-vm/asdf/issues/1522)) ([213aa22](https://github.com/asdf-vm/asdf/commit/213aa22378cf0ecf5b1924f1bfc4fee43338255a))
+
+
+### Documentation
+
+* Add Nushell installation instructions for all languages ([#1519](https://github.com/asdf-vm/asdf/issues/1519)) ([6a6c539](https://github.com/asdf-vm/asdf/commit/6a6c539f4a21fdb863fd938edd94ac3bdced349b))
+* fix `ASDF_${LANG}_VERSION` usage ([#1528](https://github.com/asdf-vm/asdf/issues/1528)) ([63f422b](https://github.com/asdf-vm/asdf/commit/63f422b4c7afcf53ef72002e39967eb9ca2da2a9))
+* fix Nushell-Homebrew setup instructions ([#1495](https://github.com/asdf-vm/asdf/issues/1495)) ([49e541a](https://github.com/asdf-vm/asdf/commit/49e541a29ff7a2f35917a4544a8b9adbc02bb1b4))
+* fix uninstall instructions for Fish Shell ([#1547](https://github.com/asdf-vm/asdf/issues/1547)) ([a1e858d](https://github.com/asdf-vm/asdf/commit/a1e858d2542691adabf9b066add86f16e759a90c))
+* Improve wording of env vars section ([#1514](https://github.com/asdf-vm/asdf/issues/1514)) ([ec3eb2d](https://github.com/asdf-vm/asdf/commit/ec3eb2d64f0531be86d10e1202a92f6b7820e294))
+* verbose plugin create command details ([#1445](https://github.com/asdf-vm/asdf/issues/1445)) ([8108ca6](https://github.com/asdf-vm/asdf/commit/8108ca6d7e5f34b9b9723f945a9c4b137f2e10ef))
+
+
+### Patches
+
+* `asdf info` show BASH_VERSION & all asdf envs ([#1513](https://github.com/asdf-vm/asdf/issues/1513)) ([a1b5eee](https://github.com/asdf-vm/asdf/commit/a1b5eeec1caf605c0e4c80748703b9e227b57aeb))
+* align Fish entrypoint behaviour with other shells ([#1524](https://github.com/asdf-vm/asdf/issues/1524)) ([8919f40](https://github.com/asdf-vm/asdf/commit/8919f4009ea233c32298911b28ceb879e2dbc675))
+* assign default values to all internal variables ([#1518](https://github.com/asdf-vm/asdf/issues/1518)) ([86477ee](https://github.com/asdf-vm/asdf/commit/86477ee8dea14ab63faf7132133304855a647fde))
+* Better handling with paths that include spaces ([#1485](https://github.com/asdf-vm/asdf/issues/1485)) ([bbcbddc](https://github.com/asdf-vm/asdf/commit/bbcbddcdd4ffa0f49c3772b66d87331420fa5727))
+* create install directory with `mkdir -p` ([#1563](https://github.com/asdf-vm/asdf/issues/1563)) ([d6185a2](https://github.com/asdf-vm/asdf/commit/d6185a21207e0ac45e69499883dad5e2b585c1b6))
+* do not remove items from PATH in POSIX entrypoint ([#1521](https://github.com/asdf-vm/asdf/issues/1521)) ([b6d0ca2](https://github.com/asdf-vm/asdf/commit/b6d0ca28d5fd2b63c7da67b127e6c2a0e01b2670))
+* enforce consistent shell redirection format ([#1533](https://github.com/asdf-vm/asdf/issues/1533)) ([1bc205e](https://github.com/asdf-vm/asdf/commit/1bc205e8aa61287c766c673acb8f0d4f9c6ee249))
+* improve readability of the non-set `nullglob` guard ([#1545](https://github.com/asdf-vm/asdf/issues/1545)) ([f273612](https://github.com/asdf-vm/asdf/commit/f273612155188f62cf8daf584d5581cd4214daf4))
+* Introduce `ASDF_FORCE_PREPEND` variable on POSIX entrypoint ([#1560](https://github.com/asdf-vm/asdf/issues/1560)) ([5b7d0fe](https://github.com/asdf-vm/asdf/commit/5b7d0fea0a10681d89dd7bf4010e0a39e6696841))
+* lint & style errors in `bin/asdf` ([#1516](https://github.com/asdf-vm/asdf/issues/1516)) ([13c0e2f](https://github.com/asdf-vm/asdf/commit/13c0e2fab0e9ad4dccf72b6f5586fb32458b8709))
+* Nushell plugin list --urls ([#1507](https://github.com/asdf-vm/asdf/issues/1507)) ([9363fb2](https://github.com/asdf-vm/asdf/commit/9363fb2f72e7fa08d3580b22d465af48a7d37031))
+* nushell plugin list all ([#1501](https://github.com/asdf-vm/asdf/issues/1501)) ([#1502](https://github.com/asdf-vm/asdf/issues/1502)) ([c5b8b3c](https://github.com/asdf-vm/asdf/commit/c5b8b3c128b48e1531f6d03d2083435f413a4738))
+* Remove files containing only `asdf` wrapper functions ([#1525](https://github.com/asdf-vm/asdf/issues/1525)) ([00fee78](https://github.com/asdf-vm/asdf/commit/00fee78423de0e399f5705bb483e599e39b707c9))
+* remove leading asterick in Fish completion ([#1543](https://github.com/asdf-vm/asdf/issues/1543)) ([198ced5](https://github.com/asdf-vm/asdf/commit/198ced50327b20b136cb6ec165610d37334a2962))
+* rename internal function `asdf_tool_versions_filename` ([#1544](https://github.com/asdf-vm/asdf/issues/1544)) ([b36ec73](https://github.com/asdf-vm/asdf/commit/b36ec7338654abc3773314147540dfa8297b48b8))
+* rename internal plugin repository functions ([#1537](https://github.com/asdf-vm/asdf/issues/1537)) ([5367f1f](https://github.com/asdf-vm/asdf/commit/5367f1f09079070c7b47551dc453c686991564a0))
+* rework POSIX entrypoint for greater shell support ([#1480](https://github.com/asdf-vm/asdf/issues/1480)) ([3379af8](https://github.com/asdf-vm/asdf/commit/3379af845ed2e281703bc0e9e4f388a7845edc2a))
+* support `asdf shim-versions` completions in fish & bash ([#1554](https://github.com/asdf-vm/asdf/issues/1554)) ([99623d7](https://github.com/asdf-vm/asdf/commit/99623d7eac0fe17e330a950c71b7ba378f656b2c))
+* Typo in POSIX entrypoint ([#1562](https://github.com/asdf-vm/asdf/issues/1562)) ([6b2ebf5](https://github.com/asdf-vm/asdf/commit/6b2ebf575ff98d3970b518de04238d30804a40d1))
+* warn if `.tool-versions` or asdfrc contains carriage returns ([#1561](https://github.com/asdf-vm/asdf/issues/1561)) ([097f773](https://github.com/asdf-vm/asdf/commit/097f7733d67aaf8d0dca1c793407babbdf6f8394))
+
+## [0.11.3](https://github.com/asdf-vm/asdf/compare/v0.11.2...v0.11.3) (2023-03-16)
+
+
+### Bug Fixes
+
+* Prepend asdf directories to the PATH in Nushell ([#1496](https://github.com/asdf-vm/asdf/issues/1496)) ([745950c](https://github.com/asdf-vm/asdf/commit/745950c3589c4047a5b94b34bc9cf06dff5dc3c7))
+
+## [0.11.2](https://github.com/asdf-vm/asdf/compare/v0.11.1...v0.11.2) (2023-02-21)
+
+
+### Bug Fixes
+
+* bash completion for latest command ([#1472](https://github.com/asdf-vm/asdf/issues/1472)) ([2606a87](https://github.com/asdf-vm/asdf/commit/2606a875eba8d74be56c78c97a76f3eb92c8253d))
+* enforce & use consistent function definitions ([#1464](https://github.com/asdf-vm/asdf/issues/1464)) ([e0fd7a7](https://github.com/asdf-vm/asdf/commit/e0fd7a7be8bbbbf0f3cb6dc38cea3b62963eb0c9))
+* nushell PATH conversion to list before filter ([#1471](https://github.com/asdf-vm/asdf/issues/1471)) ([cd0e12b](https://github.com/asdf-vm/asdf/commit/cd0e12b3ee4090242b884ac4aea0f65784e52946))
+* Remove `==` inside `[` ([#1421](https://github.com/asdf-vm/asdf/issues/1421)) ([d81b81f](https://github.com/asdf-vm/asdf/commit/d81b81f9de2dc5961624464df04cef7cafae588c))
+* support nushell v0.75.0 ([#1481](https://github.com/asdf-vm/asdf/issues/1481)) ([dd8d399](https://github.com/asdf-vm/asdf/commit/dd8d3999d41cfdd8518a9ea478929b5291b8838c))
+
+## [0.11.1](https://github.com/asdf-vm/asdf/compare/v0.11.0...v0.11.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* `reshim` did not rewrite executable path ([#1311](https://github.com/asdf-vm/asdf/issues/1311)) ([5af7625](https://github.com/asdf-vm/asdf/commit/5af76257693d1f560b9c27c9cdcc6f5a5a33c4d5))
+* Add test for nushell integration and fix some bugs ([#1415](https://github.com/asdf-vm/asdf/issues/1415)) ([60d4494](https://github.com/asdf-vm/asdf/commit/60d4494d5d21f9d7bdd0778ca962ddb44280aff7))
+* Allow `path:` versions to use `~` ([#1403](https://github.com/asdf-vm/asdf/issues/1403)) ([670c96d](https://github.com/asdf-vm/asdf/commit/670c96d1a6d6d2c19ff63ce2ed14f784c340e9b9))
+* Ban use of 'test' ([#1383](https://github.com/asdf-vm/asdf/issues/1383)) ([ec972cb](https://github.com/asdf-vm/asdf/commit/ec972cbdf0acbecf70e3678c055e27866c49341d))
+* correct order of checks in conditional for adding a missing newline ([#1418](https://github.com/asdf-vm/asdf/issues/1418)) ([4125d2b](https://github.com/asdf-vm/asdf/commit/4125d2b5560efc646e6048202ceb00fffd0b9eaf)), closes [#1417](https://github.com/asdf-vm/asdf/issues/1417)
+* Do not use `pwd` ([dd37b6f](https://github.com/asdf-vm/asdf/commit/dd37b6f0c0ed20d15e3d96b730db82f21c9e2e6f))
+* Do not use type not exported on older Python versions ([#1409](https://github.com/asdf-vm/asdf/issues/1409)) ([7460809](https://github.com/asdf-vm/asdf/commit/74608098cdfc70c2d2e85d1f3861500ef668a041))
+* force lwrcase plugin name fix capitalization mismatch errs ([#1400](https://github.com/asdf-vm/asdf/issues/1400)) ([196a05b](https://github.com/asdf-vm/asdf/commit/196a05b2dcef48f3a281350734c76ba7bc73fa81))
+* lint errors from `scripts/checkstyle.py` ([#1385](https://github.com/asdf-vm/asdf/issues/1385)) ([3492043](https://github.com/asdf-vm/asdf/commit/3492043241e466337c5965a6fe2e089147bc4152))
+* mv dev dep from repo root to subdir to avoid clash ([#1408](https://github.com/asdf-vm/asdf/issues/1408)) ([5df70da](https://github.com/asdf-vm/asdf/commit/5df70dadacd66b4150ed47e58c861418c0d1281f))
+* Remove unnecessary backslashes ([#1384](https://github.com/asdf-vm/asdf/issues/1384)) ([15faf93](https://github.com/asdf-vm/asdf/commit/15faf93a0d3615834e550ea1562fb6b8cee5a205))
+* Remove usage of `$(pwd)` in favor of `$PWD` ([f522ab9](https://github.com/asdf-vm/asdf/commit/f522ab98797345d767b239041246dfb4b740423e))
+
+## [0.11.0](https://github.com/asdf-vm/asdf/compare/v0.10.2...v0.11.0) (2022-12-12)
+
+
+### Features
+
+* **completions:** bash improvements ([#1329](https://github.com/asdf-vm/asdf/issues/1329)) ([7c802c3](https://github.com/asdf-vm/asdf/commit/7c802c3fc9b5dc556993a98e5aaf96650cbb0d5b))
+* Disable short-name repository with config value ([#1227](https://github.com/asdf-vm/asdf/issues/1227)) ([18caea3](https://github.com/asdf-vm/asdf/commit/18caea3eb7d989d195cf13b3c9ffc2058d906fc5))
+* mark current resolved versions in `asdf list` output ([#762](https://github.com/asdf-vm/asdf/issues/762)) ([5ea6795](https://github.com/asdf-vm/asdf/commit/5ea67953be74cb5fde11240dc40a541c69afc65c))
+* support nushell ([#1355](https://github.com/asdf-vm/asdf/issues/1355)) ([274a638](https://github.com/asdf-vm/asdf/commit/274a638e155c08cd0d6dbda1a0d4da02c3466c97))
+
+
+### Bug Fixes
+
+* add missing "does not add paths to PATH more than once" test for elvish ([#1275](https://github.com/asdf-vm/asdf/issues/1275)) ([3c55167](https://github.com/asdf-vm/asdf/commit/3c55167a6807b48cacaaed18df7bf0db2526ed59))
+* append trailing newline to .tool-versions files when missing ([#1310](https://github.com/asdf-vm/asdf/issues/1310)) ([eb7dac3](https://github.com/asdf-vm/asdf/commit/eb7dac3a2b15ad458f55a897d49a377508ea92fe)), closes [#1299](https://github.com/asdf-vm/asdf/issues/1299)
+* excludes "milestone" releases in "latest" command ([#1307](https://github.com/asdf-vm/asdf/issues/1307)) ([5334d1d](https://github.com/asdf-vm/asdf/commit/5334d1db3d390c46ed49101528f74483eb6b2987)), closes [#1306](https://github.com/asdf-vm/asdf/issues/1306)
+* improve formatting of ballad ([#1367](https://github.com/asdf-vm/asdf/issues/1367)) ([e0c2c31](https://github.com/asdf-vm/asdf/commit/e0c2c31fc3274387efdddebe1450f0662f91a726))
+* use ELVISH_VERSION to specify elvish test version ([#1276](https://github.com/asdf-vm/asdf/issues/1276)) ([72c3a23](https://github.com/asdf-vm/asdf/commit/72c3a2377a1afa3027c6f29cb9f3f1a7fbddaa8c))
+
 ### [0.10.2](https://www.github.com/asdf-vm/asdf/compare/v0.10.1...v0.10.2) (2022-06-08)
 
 
@@ -100,7 +346,7 @@ Fixed Bugs
 
 * Fix plugin-update --all when there are no plugins (#805, #803)
 * Ban `echo` command from asdf codebase (#806, #781)
-* Add basic tests for for plugin-update command (#807)
+* Add basic tests for plugin-update command (#807)
 * Cleanup unused code in plugin update tests (#810)
 * Fix resolution of relative symlinks (#815, #625)
 * Fixes to GitHub workflow (#833)
@@ -185,7 +431,7 @@ Fixed Bugs
   Extension commands are now expected to be inside plugins's `lib/commands/command-*.bash` instead of `bin/command*`.
 
   This change was made for two reasons: Keep the convention that all files to be sourced by bash should end with
-  the `.bash` extension. And the `lib/commands/` directoy mirrors the location of asdf own core commands.
+  the `.bash` extension. And the `lib/commands/` directory mirrors the location of asdf own core commands.
 
   Added tests to make sure `asdf help` properly displays available extension commands.
 
